@@ -1,0 +1,42 @@
+ITUNIVERSITY – TD SI-IHM – CODE IGNITER PROMO 18 – Juin 2026
+Binome
+Thème
+Caisse d’un supermarché
+1.     Produits
+a.     Désignation
+b.     Prix
+c.     Quantité en stock
+d.     Etc…
+2.     Caisse
+3.     Achat
+ 
+Rappel contenu technique
+-       PHP - Codeigniter
+-       Base SQLITE
+ 
+Travaux à faire 
+1.     Créer la base de données et les tables, insérer 5 produits et 2 caisses (30mn)
+a.     Produit
+b.     Caisse
+c.     Achat
+2.     Initialiser Codeigniter (5mn)
+3.     Créer le template à partir du fichier fourni (25mn)
+ 
+Travaux à faire 2
+1.     Créer l’écran d’accueil qui permet de choisir le numéro de Caisse (20mn)
+
+a.     Après validation, on arrive sur la page de saisie des achats et on affiche la caisse choisie sur la partie au-dessus du menu.(25mn) – il faut utiliser la session
+ 
+Travaux à faire 3
+1.     Créer la page de saisie des achats
+
+a.     Etape 1 : faire la partie en haut en 1er (60mn)
+b.     Etape 2 : afficher la partie en bas (45mn)
+ 
+ 
+Travaux à faire 4
+1.     Rajouter un écran de login, avant la page de choix de la caisse.
+2.     Rajouter un bouton « clôturer achat » pour finaliser un achat. Donc, on obtient une liste vide pour le prochain achat. Un achat donc correspond à un client.
+ 
+A rendre
+
