@@ -14,15 +14,18 @@ class AchatModel extends Model
     protected $allowedFields    = [
         'produit_id',
         'caisse_id',
+        'client_id',
         'quantite',
         'prix_unitaire',
     ];
 
-    public function findByCaisse(int $caisseId): array
+    public function findByCaisseAndClient(int $caisseId, int $clientId): array
     {
-        return $this->select('achat.*, produit.designation, produit.prix, produit.stock')
+        return $this->select('achat.*, produit.designation, produit.prix, produit.stock, client.nom AS client_nom')
             ->join('produit', 'produit.id = achat.produit_id')
+            ->join('client', 'client.id = achat.client_id', 'left')
             ->where('achat.caisse_id', $caisseId)
+            ->where('achat.client_id', $clientId)
             ->orderBy('achat.id', 'DESC')
             ->findAll();
     }

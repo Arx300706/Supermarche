@@ -7,6 +7,10 @@
 
 <h2>Connexion Client</h2>
 
+<?php if (session()->getFlashdata('success')): ?>
+    <p><?= esc(session()->getFlashdata('success')) ?></p>
+<?php endif; ?>
+
 <form method="post" action="/login/connexion">
 
     <label>Nom du client :</label><br>

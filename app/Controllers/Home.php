@@ -6,8 +6,12 @@ use App\Models\CaisseModel;
 
 class Home extends BaseController
 {
-    public function index(): string
+    public function index()
     {
+        if (!session()->get('client_id')) {
+            return redirect()->to('/');
+        }
+
         $model = new CaisseModel();
 
         $data = [
@@ -20,17 +24,21 @@ class Home extends BaseController
 
     public function caisseSelect()
     {
+        if (!session()->get('client_id')) {
+            return redirect()->to('/');
+        }
+
         $caisseId = $this->request->getPost('caisse_id');
 
         if (!$caisseId) {
-            return redirect()->to('/')->with('error', 'Veuillez choisir une caisse.');
+            return redirect()->to('/accueil')->with('error', 'Veuillez choisir une caisse.');
         }
 
         $model = new CaisseModel();
         $caisse = $model->find($caisseId);
 
         if (!$caisse) {
-            return redirect()->to('/')->with('error', 'La caisse choisie est introuvable.');
+            return redirect()->to('/accueil')->with('error', 'La caisse choisie est introuvable.');
         }
 
         session()->set('caisse_id', (int) $caisseId);

@@ -14,6 +14,7 @@ class TestController extends BaseController
 
         $produits = $db->query("SELECT * FROM produit")->getResult();
         $caisses = $db->query("SELECT * FROM caisse")->getResult();
+        $clients = $db->query("SELECT * FROM client")->getResult();
         $achats = $db->query("SELECT * FROM achat")->getResult();
 
         echo "<pre>";
@@ -23,6 +24,9 @@ class TestController extends BaseController
 
         echo "\n CAISSE\n";
         print_r($caisses);
+
+        echo "\n CLIENT\n";
+        print_r($clients);
 
         echo "\nACHAT\n";
         print_r($achats);

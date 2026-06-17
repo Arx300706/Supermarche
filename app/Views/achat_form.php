@@ -120,6 +120,7 @@
     <div class="header">
         <div>
             <h1>Saisie des achats</h1>
+            <strong>Client : <?= esc($clientNom) ?></strong><br>
             <strong>Caisse choisie : Caisse #<?= esc($caisse['id']) ?></strong><br>
             Montant caisse : <?= number_format((float) $caisse['montant_total'], 0, ',', ' ') ?> Ar<br>
             Date : <?= esc($caisse['date']) ?>
@@ -166,6 +167,10 @@
             <input type="number" name="quantite" id="quantite" min="1" value="<?= esc(old('quantite') ?? 1) ?>" required>
 
             <button type="submit">Ajouter l'achat</button>
+        </form>
+
+        <form method="post" action="/achat/cloturer" style="margin-top: 12px;">
+            <button type="submit">Cloturer achat</button>
         </form>
     </div>
 

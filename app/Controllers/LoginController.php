@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\ClientModel;
 
 class LoginController extends BaseController
 {
@@ -13,13 +14,22 @@ class LoginController extends BaseController
 
     public function connexion()
     {
-        $client = $this->request->getPost('client');
+        $client = trim((string) $this->request->getPost('client'));
 
         if (!$client) {
-            return redirect()->to('/login');
+            return redirect()->to('/');
         }
 
-        session()->set('client', $client);
+        $clientModel = new ClientModel();
+        $clientId = $clientModel->insert([
+            'nom' => $client,
+            'date' => date('Y-m-d H:i:s'),
+        ]);
+
+        session()->set([
+            'client_id' => (int) $clientId,
+            'client_nom' => $client,
+        ]);
 
         return redirect()->to('/accueil');
     }

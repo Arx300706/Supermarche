@@ -13,6 +13,7 @@ $routes->get('/test', 'TestController::index');
 $routes->post('/caisseSelect', 'Home::caisseSelect');
 $routes->get('/achat', 'AchatController::index');
 $routes->post('/achat/store', 'AchatController::store');
+$routes->post('/achat/cloturer', 'AchatController::cloturer');
 
 $routes->get('/', 'LoginController::index');
 $routes->post('/login/connexion', 'LoginController::connexion');
