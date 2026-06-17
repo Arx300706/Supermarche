@@ -122,3 +122,88 @@ in SYSTEMPATH/Database/BaseConnection.php on line 606.
  8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
  9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
 10 SYSTEMPATH/rewrite.php(44): require_once('/home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/public/index.php')
+ERROR - 2026-06-17 07:29:23 --> Error connecting to the database: Error: Class "SQLite3" not found in /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Database/SQLite3/Connection.php:111
+Stack trace:
+#0 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/app/Controllers/SeedController.php(17): CodeIgniter\Database\BaseConnection->query()
+#4 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/CodeIgniter.php(951): App\Controllers\SeedController->index()
+#5 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#6 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#8 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#9 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#10 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/rewrite.php(44): require_once('...')
+#11 {main}
+CRITICAL - 2026-06-17 07:29:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [SQLite3]: Class "SQLite3" not found
+[Method: GET, Route: seed]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+ 3 APPPATH/Controllers/SeedController.php(17): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\SeedController->index()
+ 5 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/public/index.php')
+ERROR - 2026-06-17 07:32:12 --> Error connecting to the database: Error: Class "SQLite3" not found in /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Database/SQLite3/Connection.php:111
+Stack trace:
+#0 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+ERROR - 2026-06-17 07:32:27 --> Error connecting to the database: Error: Class "SQLite3" not found in /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Database/SQLite3/Connection.php:111
+Stack trace:
+#0 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Commands/Database/ShowTableInfo.php(121): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\ShowTableInfo->run()
+#6 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#7 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#8 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#9 /home/armando/Documents/S3_S4/S4/Mr Rojo/TP17Juin/supermarche/spark(87): CodeIgniter\Boot::bootSpark()
+#10 {main}
+CRITICAL - 2026-06-17 07:32:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [SQLite3]: Class "SQLite3" not found
+[Method: CLI, Route: db:table]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+ 3 SYSTEMPATH/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Commands/Database/ShowTableInfo.php(121): CodeIgniter\Database\BaseConnection->listTables()
+ 5 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\ShowTableInfo->run()
+ 6 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+ 7 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 8 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand()
+ 9 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark()
+DEBUG - 2026-06-17 07:38:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-17 07:38:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-17 07:41:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-17 07:41:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-17 07:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-17 07:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-17 07:42:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-17 07:43:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-17 07:43:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-17 07:43:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-17 07:44:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-17 07:44:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-17 07:44:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

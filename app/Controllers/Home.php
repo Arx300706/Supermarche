@@ -10,7 +10,10 @@ class Home extends BaseController
     {
         $model = new CaisseModel();
 
-        $data['caisses'] = $model->findAll();
+        $data = [
+            'caisses' => $model->orderBy('id', 'ASC')->findAll(),
+            'error' => session()->getFlashdata('error'),
+        ];
 
         return view('accueil', $data);
     }
@@ -19,7 +22,18 @@ class Home extends BaseController
     {
         $caisseId = $this->request->getPost('caisse_id');
 
-        session()->set('caisse_id', $caisseId);
+        if (!$caisseId) {
+            return redirect()->to('/')->with('error', 'Veuillez choisir une caisse.');
+        }
+
+        $model = new CaisseModel();
+        $caisse = $model->find($caisseId);
+
+        if (!$caisse) {
+            return redirect()->to('/')->with('error', 'La caisse choisie est introuvable.');
+        }
+
+        session()->set('caisse_id', (int) $caisseId);
 
         return redirect()->to('/achat');
     }

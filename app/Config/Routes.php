@@ -12,3 +12,4 @@ $routes->get('/test', 'TestController::index');
 
 $routes->post('/caisseSelect', 'Home::caisseSelect');
 $routes->get('/achat', 'AchatController::index');
+$routes->post('/achat/store', 'AchatController::store');
