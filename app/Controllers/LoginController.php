@@ -21,6 +21,6 @@ class LoginController extends BaseController
 
         session()->set('client', $client);
 
-        return redirect()->to('/');
+        return redirect()->to('/accueil');
     }
 }
